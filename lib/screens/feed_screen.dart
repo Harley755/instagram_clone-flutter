@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/utils/colors.dart';
 import 'package:instagram_clone/utils/global_variables.dart.dart';
-import 'package:instagram_clone/widgets/post_cart.dart';
+import 'package:instagram_clone/widgets/post_card.dart';
 
 class FeedScreen extends StatelessWidget {
   const FeedScreen({super.key});
