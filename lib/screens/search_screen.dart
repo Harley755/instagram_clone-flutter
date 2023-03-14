@@ -94,7 +94,10 @@ class _SearchScreenState extends State<SearchScreen> {
           //         itemBuilder: (context, index) => Image.network(
           //           (snapshot.data! as dynamic).docs[index]['postUrl'],
           //         ),
-          //         staggeredTileBuilder: (index) => StaggeredTile.count(
+          //         staggeredTileBuilder: (index) => MediaQuery.of(context).size.width > webScreenSize ? StaggeredTile.count(
+          //           (index % 7 == 0) ? 1 : 1,
+          //           (index % 7 == 0) ? 1 : 1,
+          //         ), : StaggeredTile.count(
           //           (index % 7 == 0) ? 2 : 1,
           //           (index % 7 == 0) ? 2 : 1,
           //         ),
