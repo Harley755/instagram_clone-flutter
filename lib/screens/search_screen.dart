@@ -69,28 +69,29 @@ class _SearchScreenState extends State<SearchScreen> {
                 );
               },
             )
-          : FutureBuilder(
-              future: FirebaseFirestore.instance.collection('posts').get(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return const Center(child: CircularProgressIndicator());
-                }
+          // : FutureBuilder(
+          //     future: FirebaseFirestore.instance.collection('posts').get(),
+          //     builder: (context, snapshot) {
+          //       if (!snapshot.hasData) {
+          //         return const Center(child: CircularProgressIndicator());
+          //       }
 
-                return StaggeredGridView.countBuilder(
-                  crossAxisCount: 3,
-                  itemCount: (snapshot.data! as dynamic).docs.length,
-                  itemBuilder: (context, index) => Image.network(
-                    (snapshot.data! as dynamic).docs[index]['postUrl'],
-                  ),
-                  staggeredTileBuilder: (index) => StaggeredTile.count(
-                    (index % 7 == 0) ? 2 : 1,
-                    (index % 7 == 0) ? 2 : 1,
-                  ),
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
-                );
-              },
-            ),
+          //       return StaggeredGridView.countBuilder(
+          //         crossAxisCount: 3,
+          //         itemCount: (snapshot.data! as dynamic).docs.length,
+          //         itemBuilder: (context, index) => Image.network(
+          //           (snapshot.data! as dynamic).docs[index]['postUrl'],
+          //         ),
+          //         staggeredTileBuilder: (index) => StaggeredTile.count(
+          //           (index % 7 == 0) ? 2 : 1,
+          //           (index % 7 == 0) ? 2 : 1,
+          //         ),
+          //         mainAxisSpacing: 8,
+          //         crossAxisSpacing: 8,
+          //       );
+          //     },
+          //   ),
+          : Container(),
     );
   }
 }
